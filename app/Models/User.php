@@ -3,13 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Model implements Authenticatable
+class User extends Authenticatable
 {
-    use HasFactory, AuthenticableTrait;
+    use HasFactory, Notifiable;
 
     protected $table = "users";
     protected $primaryKey = "id";
@@ -24,40 +23,26 @@ class User extends Model implements Authenticatable
         'name',
     ];
 
-    // Implementing the required methods from Authenticatable
-    public function getAuthIdentifierName()
-    {
-        return 'email';  // Or return 'id' if using an ID-based authentication
-    }
+        /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
-    public function getAuthIdentifier()
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
     {
-        return $this->email;  // Typically returns the unique field (like email or username)
-    }
-
-    public function getAuthPassword()
-    {
-        return $this->password;  // Returns the user's password
-    }
-
-    public function getRememberToken()
-    {
-        return $this->token;  // Return remember token if any
-    }
-
-    public function setRememberToken($value)
-    {
-        $this->token = $value;  // Set the remember token
-    }
-
-    public function getRememberTokenName()
-    {
-        return 'token';  // Remember token column name
-    }
-
-    // Required by Authenticatable interface, returns the user's password attribute
-    public function getAuthPasswordName()
-    {
-        return 'password';  // This is the field name in the database that stores the password
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
     }
 }

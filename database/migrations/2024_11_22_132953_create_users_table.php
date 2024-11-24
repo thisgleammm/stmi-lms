@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(false);;
             $table->string('email')->nullable(false)->unique("users_email_unique");
-            $table->string('level')->nullable(false)->default('mahasiswa');
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable(false);;
+            $table->string('level')->nullable(false)->default('mahasiswa');
             $table->string("token")->nullable()->unique("users_token_unique");
             $table->rememberToken();
+            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
 
