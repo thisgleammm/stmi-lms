@@ -1,6 +1,10 @@
 {
+  "public/images/bgMainLogin.svg": {
+    "file": "assets/bgMainLogin-CDp9aG7b.svg",
+    "src": "public/images/bgMainLogin.svg"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-B7NCY5JU.css",
+    "file": "assets/app-QfVOBKfJ.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
