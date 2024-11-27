@@ -6,12 +6,16 @@
         @csrf
         <div class="text-center mb-3 flex justify-center">
             <div class="image size-20 mb-3">
-                <img src="{{ url('/images/LogoApps.svg') }}" alt="Logo" class="max-w-full h-auto">
+                <a href="/">
+                    <img src="{{ url('/images/LogoApps.svg') }}" alt="Logo" class="max-w-full h-auto">
+                </a>
             </div>
         </div>
         <div class="text-center mb-3 flex justify-center">
             <div class="image mb-3">
-                <img src="{{ url('/images/titleLogo.svg') }}" alt="Title" class="max-w-full h-auto">
+                <a href="/">
+                    <img src="{{ url('/images/titleLogo.svg') }}" alt="Title" class="max-w-full h-auto">
+                </a>
             </div>
         </div>
         <!-- Email Address -->
@@ -56,7 +60,9 @@
         </x-primary-button>
 
         <div class="footer pt-4 text-center">
-            <img src="{{ url('/images/footerLogo.svg') }}" alt="Footer Logo" class="max-w-full h-auto">
+            <a href="https://stmi.ac.id/">
+                <img src="{{ url('/images/footerLogo.svg') }}" alt="Footer Logo" class="max-w-full h-auto">
+            </a>
         </div>
     </form>
 </x-guest-layout>
