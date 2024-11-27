@@ -28,13 +28,6 @@ STMI Learning Management System (STMI LMS) adalah platform pembelajaran digital 
   <img src="https://contrib.rocks/image?repo=thisgleammm/stmi-lms" />
 </a>
 
-## Roadmap
-
-- 
-
-- 
-
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
