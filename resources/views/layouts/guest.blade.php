@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="title text-center">
-                        <div class="image mb-10">
+                        <div class="image mb-8 mx-2">
                             <img src="{{ url('/images/titleLogo.svg') }}" alt="Title" class="max-w-full h-auto">
                         </div>
                     </div>
@@ -42,10 +42,10 @@
                     <div class="flex items-start">
                         <a href="#" class="ms-2 text-sm text-gray-400 drop-shadow-sm my-2">Tidak bisa masuk?</a>
                     </div>
-                    <div class="g-recaptcha mt-4" data-sitekey="{{config('services.recaptcha.key')}}"></div>
+                    <div class="g-recaptcha mt-4  w-10 "  data-sitekey="{{config('services.recaptcha.key')}}"></div>
                     <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center shadow-lg">MASUK</button>
                     <div class="footer pt-8 text-center">
-                        <img src="{{ url('/images/footerLogo.svg') }}" alt="Footer Logo" class="max-w-full h-auto">
+                        <img src="{{ url('/images/footerLogo.svg') }}" alt="Footer Logo" class="max-w-full h-auto mx-1 mb-1">
                     </div>
                 </form>
             </div>
