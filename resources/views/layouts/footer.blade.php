@@ -1,6 +1,6 @@
 <footer>
     <div class="bg-regal-blue flex flex-col lg:flex-row justify-center py-12 text-white">
-        <a href="" class="text-center px-5 pt-14">
+        <a href="{{ route('dashboard') }}" class="text-center px-5 pt-14">
             <img src="{{ url('/images/LogoFooter.svg') }}" alt="Logo SIMPEL" class="mt-4 ml-8 mb-4">   
         </a>
 
