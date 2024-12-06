@@ -16,37 +16,18 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    public function login(UserLoginRequest $request): UserResource
-    {
-        $data = $request->validated();
 
-        $user = User::where('email', $data['email'])->first();
-        if(!$user || Hash::check($data['password'], $user->password)){
-            throw new HttpResponseException(response([
-                "errors" => [
-                    "message" => [
-                        "Email or Password Wrong"
-                    ]
-                ]
-            ], 401));
-        }
-        $user->token = Str::uuid()->toString();
-        $user->save();
-
-        return new UserResource($user);
-    }
-
-    public function get(Request $request) : UserResource
+    public function get(Request $request): UserResource
     {
         $user = Auth::user();
         return new UserResource($user);
     }
 
-    public function update(UserUpdateRequest $request) : UserResource
+    public function update(UserUpdateRequest $request): UserResource
     {
         $data = $request->validated();
         $user = Auth::user();
-        
+
         // Check if the user is properly authenticated
         if (!$user) {
             return response()->json(['message' => 'Unauthorized'], 401);
@@ -68,11 +49,11 @@ class UserController extends Controller
         return new UserResource($user);
     }
 
-    public function logout(Request $request) : JsonResponse
+    public function logout(Request $request): JsonResponse
     {
         $user = Auth::user();
         $user->token = null;
-        $user->save();
+        // $user->save();
 
         return response()->json([
             'data' => true

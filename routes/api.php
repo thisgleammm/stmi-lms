@@ -19,10 +19,10 @@ use App\Http\Controllers\UserController;
 //    return $request->user();
 //});
 
-Route::post('users/login', [UserController::class, 'login']);
+// Route::post('users/login', [UserController::class, 'login']);
 
-Route::middleware(\App\Http\Middleware\ApiAuthMiddleware::class)->group(function (){
-    Route::get('/users/current', [UserController::class, 'get']);
-    Route::patch('/users/current', [UserController::class, 'update']);
-    Route::delete('/users/logout', [UserController::class, 'logout']);
-});
+// Route::middleware(\App\Http\Middleware\ApiAuthMiddleware::class)->group(function () {
+//     Route::get('/users/current', [UserController::class, 'get']);
+//     Route::patch('/users/current', [UserController::class, 'update']);
+//     Route::delete('/users/logout', [UserController::class, 'logout']);
+// });
