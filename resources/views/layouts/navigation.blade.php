@@ -34,7 +34,7 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('profile.edit')">
+                                <x-dropdown-link :href="route('lecture')">
                                     {{ __('Lecture Data') }}
                                 </x-dropdown-link>
 
@@ -46,8 +46,16 @@
                                     </x-dropdown-link>
                                 </form>
                             </x-slot>
-                        </x-dropdown>
+                        </x-dropdown> 
                     </div>
+                    
+                    <x-nav-link :href="route('lecture')" :active="request()->routeIs('lecture')">
+                        {{ __('Course Data') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('userdata')" :active="request()->routeIs('userdata')">
+                        {{ __('Create Anounce') }}
+                    </x-nav-link> 
                 </div>
             </div>
 
