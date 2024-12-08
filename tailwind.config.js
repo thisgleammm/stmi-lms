@@ -18,6 +18,10 @@ export default {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                "regal-blue": "#0357B1",
+                "regal-blue-500": "#4b77a6",
+            },
         },
     },
 
