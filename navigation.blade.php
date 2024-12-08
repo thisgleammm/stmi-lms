@@ -18,11 +18,6 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                   
-
-
-
-
                     <!-- Dropdown Menu (Profile & Log Out) -->
                     
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -54,13 +49,13 @@
                         </x-dropdown>
                     </div>
 
-                    <x-nav-button :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Course Data') }}
-                    </x-nav-button>
+                    </x-nav-link>
 
-                    <x-nav-button :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Create Anounce') }}
-                    </x-nav-button>
+                    </x-nav-link>
                 </div>
             </div>
 
