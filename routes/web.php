@@ -11,13 +11,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/lecture', function () {
-    return view('lecture');
-})->middleware(['auth', 'verified'])->name('lecture');
+Route::get('/lecturedata', function () {
+    return view('lecturedata');
+})->middleware(['auth', 'verified'])->name('lecturedata');
 
-Route::get('/userdata', function () {
-    return view('userdata');
-})->middleware(['auth', 'verified'])->name('userdata');
+Route::get('/studentdata', function () {
+    return view('studentdata');
+})->middleware(['auth', 'verified'])->name('studentdata');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -3,9 +3,6 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('User Data') }}
         </h2>
-        <h2 class="font-semibold text-sm text-gray-800 leading-tight mt-4 ml-2">
-             {{ __('Lecture Data') }}
-        </h2>
     </x-slot>
 
     <div class="py-2">
@@ -13,6 +10,7 @@
              <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg ">
                 <div class="flex justify-between">
                   <div class="p-6 text-gray-900">
+                    {{ __('Lecture Data') }}
                        <!-- Button untuk membuka modal -->
                         <button id="openModalButton" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                             add lecture +

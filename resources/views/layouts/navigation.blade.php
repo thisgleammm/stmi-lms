@@ -19,7 +19,7 @@
                     </x-nav-link>
 
                     <!-- Dropdown Menu (Profile & Log Out) -->
-
+                    @if (Auth::user()->level === 'admin')
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
@@ -38,35 +38,32 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('lecture')">
+                                <x-dropdown-link :href="route('lecturedata')" :active="request()->routeIs('userdata')">
                                     {{ __('Lecture Data') }}
                                 </x-dropdown-link>
 
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                    <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault(); this.closest('form').submit();">
-                                        {{ __('Student Data') }}
-                                    </x-dropdown-link>
-                                </form>
+                                <x-dropdown-link :href="route('studentdata')">
+                                    {{ __('Student Data') }}
+                                </x-dropdown-link>
                             </x-slot>
                         </x-dropdown> 
                     </div>
                     
-                    <x-nav-link :href="route('lecture')" :active="request()->routeIs('lecture')">
+                    {{-- <x-nav-link :href="route('lecturedata')" :active="request()->routeIs('lecturedata')">
                         {{ __('Course Data') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('userdata')" :active="request()->routeIs('userdata')">
+                    <x-nav-link :href="route('studentdata')" :active="request()->routeIs('studentdata')">
                         {{ __('Create Anounce') }}
-                    </x-nav-link> 
+                    </x-nav-link>  --}}
+                    @endif
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                              <div class="image size-6 ml-1 mt-2">
-                                <img src="{{ url('/images/notif icon.svg') }}" alt="Logo" class="max-w-full h-auto">
+                                <img src="{{ url('/images/notificon.svg') }}" alt="Logo" class="max-w-full h-auto">
                             </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -77,7 +74,7 @@
                                 <div class="px-4">{{ Auth::user()->email }}</div>
                         </div>           
                          <div class="image size-10">
-                            <img src="{{ url('/images/profil.png') }}" alt="Logo" class="max-w-full h-auto">
+                            <img src="{{ url('/images/profile.svg') }}" alt="Logo" class="max-w-full h-auto">
                         </div>
                         </button>
                     </x-slot>

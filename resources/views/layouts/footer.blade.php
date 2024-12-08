@@ -1,7 +1,7 @@
 <footer>
     <div class="bg-regal-blue flex flex-col lg:flex-row justify-center py-12 text-white">
-        <a href="{{ route('dashboard') }}" class="text-center px-5 pt-14">
-            <img src="{{ url('/images/LogoFooter.svg') }}" alt="Logo SIMPEL" class="mt-4 ml-8 mb-4">   
+        <a href="{{ route('dashboard') }}" class="flex lg:justify-start justify-center mt-14 space-x-8 lg:space-x-12">
+            <img src="{{ url('/images/LogoFooter.svg') }}" alt="Logo SIMPEL" class="w-24 h-24 lg:w-32 lg:h-32 mt-8 mb-4">   
         </a>
 
         <div class="flex flex-col lg:flex-row mt-4 lg:px-16 px-6 mr-16">
@@ -38,15 +38,15 @@
                 <p>and mission in education and development.</p>
                 
                 <!-- Membuat gambar berdampingan menggunakan flex -->
-                <div class="flex mt-8 space-x-8 justify-center lg:justify-start">
+                <div class="flex justify-center mt-10 space-x-8 lg:space-x-16">
                     <!-- Link pertama untuk gambar Kemenperin -->
-                    <a href="https://kemenperin.go.id/" class="mr-8">
-                        <img src="{{ url('/images/kemenperinlogo.svg') }}" alt="Kemenperin" class="mr-2 w-24 h-auto lg:w-32 lg:h-32">
+                    <a href="https://kemenperin.go.id/" class="w-20 lg:w-24 h-20 lg:h-24">
+                        <img src="{{ url('/images/kemenperinlogo.svg') }}" alt="Kemenperin" class="w-full h-full object-contain">
                     </a>
 
                     <!-- Link kedua untuk gambar STMI -->
-                    <a href="https://stmi.ac.id/" class="mr-4">
-                        <img src="{{ url('/images/stmilogo.svg') }}" alt="STMI" class="w-24 h-auto lg:w-28 lg:h-32">
+                    <a href="https://stmi.ac.id/" class="w-20 lg:w-24 h-20 lg:h-24"">
+                        <img src="{{ url('/images/stmilogo.svg') }}" alt="STMI" class="w-full h-full object-contain">
                     </a>
                 </div>
             </div>
@@ -62,17 +62,17 @@
                 <p>Stay informed about news and events from our institution.</p>
 
                 <!-- Ikon Sosial Media -->
-                <div class="flex lg:justify-start justify-center mt-14 space-x-8 lg:space-x-12">
-                    <a href="https://facebook.com/PoliteknikSTMIJakarta/" class="w-16 h-16 lg:w-20 lg:h-20">
+                <div class="flex lg:justify-start justify-center mt-10 space-x-8 lg:space-x-12">
+                    <a href="https://facebook.com/PoliteknikSTMIJakarta/" class="w-12 h-12">
                         <img src="{{ url('/images/facebook.svg') }}" alt="Facebook" class="w-full h-full object-contain">
                     </a>
-                    <a href="https://twitter.com/stmijakarta" class="w-16 h-16 lg:w-20 lg:h-20">
+                    <a href="https://twitter.com/stmijakarta" class="w-12 h-12">
                         <img src="{{ url('/images/x.svg') }}" alt="X" class="w-full h-full object-contain">
                     </a>
-                    <a href="https://instagram.com/stmijakarta/" class="w-16 h-16 lg:w-20 lg:h-20">
+                    <a href="https://instagram.com/stmijakarta/" class="w-12 h-12">
                         <img src="{{ url('/images/instagram.svg') }}" alt="Instagram" class="w-full h-full object-contain">
                     </a>
-                    <a href="https://youtube.com/@PoliteknikSTMIJakarta" class="w-16 h-16 lg:w-20 lg:h-20">
+                    <a href="https://youtube.com/@PoliteknikSTMIJakarta" class="w-12 h-12">
                         <img src="{{ url('/images/youtube.svg') }}" alt="YouTube" class="w-full h-full object-contain">
                     </a>
                 </div>
