@@ -29,7 +29,18 @@ class LoginRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
-            'g-recaptcha-response' => 'recaptcha',
+            'g-recaptcha-response' => ['required', 'captcha'],
+        ];
+    }
+
+    /**
+     * Custom validation messages for the request.
+     */
+    public function messages(): array
+    {
+        return [
+            'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
+            'g-recaptcha-response.captcha' => 'Captcha error! try again.',
         ];
     }
 
