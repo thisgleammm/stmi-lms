@@ -14,15 +14,3 @@ use App\Http\Controllers\UserController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
-
-Route::post('users/login', [UserController::class, 'login']);
-
-Route::middleware(\App\Http\Middleware\ApiAuthMiddleware::class)->group(function (){
-    Route::get('/users/current', [UserController::class, 'get']);
-    Route::patch('/users/current', [UserController::class, 'update']);
-    Route::delete('/users/logout', [UserController::class, 'logout']);
-});
