@@ -3,6 +3,9 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
+        <h2 class="font-semibold text-sm text-gray-800 leading-tight mt-4 ml-2">
+             {{ __('Mountly Statistics') }}
+        </h2>
     </x-slot>
     @if (Auth::user()->level === 'admin')
         <div class="py-12">
@@ -11,7 +14,6 @@
                     <div class="p-6 text-gray-900">
                         <div class="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                             <div id="bar-chart"></div>
-
                             <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
                             <script>
                                 const chartConfig = {
@@ -66,7 +68,6 @@
                                         borderColor: "#e7e7e7",
                                     },
                                 };
-
                                 const chart = new ApexCharts(document.querySelector("#bar-chart"), chartConfig);
                                 chart.render();
                             </script>
