@@ -1,17 +1,18 @@
 <footer>
     <div class="bg-regal-blue flex flex-col lg:flex-row justify-center py-12 text-white">
-        <a href="{{ route('dashboard') }}" class="flex lg:justify-start justify-center mt-14 space-x-8 lg:space-x-12">
-            <img src="{{ url('/images/LogoFooter.svg') }}" alt="Logo SIMPEL" class="w-24 h-24 lg:w-32 lg:h-32 mt-8 mb-4">   
+        <a href="{{ route('dashboard') }}" class="flex lg:justify-start justify-center mt-8 ml-24 space-x-8 lg:space-x-12">
+            <img src="{{ url('/images/LogoFooter.svg') }}" alt="Logo SIMPEL" class="w-20 h-20 lg:w-32 lg:h-32 mt-4 mb-4">   
         </a>
 
-        <div class="flex flex-col lg:flex-row mt-4 lg:px-16 px-6 mr-16">
+        <div class="flex flex-col lg:flex-row mt-4 lg: px-6 mr-10 ml-12">
             <!-- Alamat -->
             <div class="mt-4 lg:mt-0 mr-10 mb-8 lg:mb-0">
                 <p class="mb-3 text-lg font-bold">Address</p>
+                <p>JL Letjen Suprapto No26, cemp. Putih Tim, Kec.</p>
+                <p>Cemp. Putih, Jakarta Pusat, Daerah khusus</p>
+                <p>IbuKota Jakarta 10510.</p>
                 
-                <!-- Google Maps Embed -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15866.81479988534!2d106.8678534!3d-6.1704146!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5043973ff63%3A0xc125c1242e567fd1!2sPolytechnic%20STMI%20Jakarta!5e0!3m2!1sen!2sid!4v1709964453699!5m2!1sen!2sid"></iframe>
-                
+                <!-- Google Maps Embed -->                
                 <div class="mt-6">
                     <!-- Email dengan ikon -->
                     <p class="flex items-center mb-3">
@@ -45,7 +46,7 @@
                     </a>
 
                     <!-- Link kedua untuk gambar STMI -->
-                    <a href="https://stmi.ac.id/" class="w-20 lg:w-24 h-20 lg:h-24"">
+                    <a href="https://stmi.ac.id/" class="w-20 lg:w-24 h-20 lg:h-24">
                         <img src="{{ url('/images/stmilogo.svg') }}" alt="STMI" class="w-full h-full object-contain">
                     </a>
                 </div>
