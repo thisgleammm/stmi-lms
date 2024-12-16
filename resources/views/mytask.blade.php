@@ -5,19 +5,18 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-4xl mx-auto py-6 ml-44">
+    <div class="w-3/4 mx-auto py-6 ">
         <h1 class="text-xl font-bold text-gray-800 mb-6">Timeline</h1>
             <div class="mb-4 flex">
                 <label for="filter" class="block text-gray-600 ml-8 font-medium mt-3 ">Filter</label>
                 <select id="filter" class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-2/12 sm:text-sm ml-4 mt-2">
                     <option value="dates">Sort by dates</option>
-                    <option value="dates">Sort by dates</option>
-                    <option value="dates">Sort by dates</option>
-                    <option value="dates">Sort by dates</option>
+                    <option value="dates">Upcoming</option>
+                    <option value="dates">complate</option>
                 </select>
             </div>
             <div>
-                <div class="bg-white p-2 rounded shadow mx-8">
+                <div class="bg-white p-2 rounded shadow  w-full">
                 <h2 class="text-base font-semibold text-gray-700 mb-4 mt-4 ml-9">Saturday, 30 November 2024</h2>
                 <div class="space-y-4 my-5">
                     <!-- Task Card -->

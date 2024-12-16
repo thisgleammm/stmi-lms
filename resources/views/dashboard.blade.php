@@ -79,7 +79,7 @@
         <h2 class="text-xl font-semibold ml-44 mb-2">Latest Announcements</h2>
         <div class="bg-white p-4 rounded shadow mx-40">
             <p class="text-base text-gray-500">27 Nov, 12:07</p>
-            <p class="text-lg text-slate-950">Alvaro Muyassar</p>
+            <p class="text-lg text-slate-950">{{ Auth::user()->name }}</p>
             <a href="#" class="text-blue-600 font-semibold text-base">Maintenance LMS 27th November 2024</a>
         </div>
     </div>
@@ -106,7 +106,7 @@
                         <h3 class="text-lg font-semibold">QUIZ REVIEW - Penugasan (Riset Operasi)</h3>
                         <p class="text-sm text-gray-500">Metode Penugasan kasus Minimasi & Maksimasi</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded">Attempt Quiz Now</button>
+                    <a class="bg-blue-600 text-white px-4 py-2 rounded" href="<?= url('coursefile'); ?>">Attempt Quiz Now</a>
                 </div>
             </div>
         </div>
