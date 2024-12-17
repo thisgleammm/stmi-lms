@@ -40,7 +40,7 @@
                             <x-slot name="content">
                                 <x-dropdown-link :href="route('lecturedata')" :active="request()->routeIs('userdata')">
                                     {{ __('Lecture Data') }}
-                                </x-dropdown-link>
+                                </x-dropdown-link> 
 
                                 <x-dropdown-link :href="route('studentdata')">
                                     {{ __('Student Data') }}
@@ -56,6 +56,19 @@
                     <x-nav-link :href="route('studentdata')" :active="request()->routeIs('studentdata')">
                         {{ __('Create Anounce') }}
                     </x-nav-link>  --}}
+                    @elseif(Auth::user()->level === 'mahasiswa')
+                    <x-nav-link :href="route('mycourse')" :active="request()->routeIs('mycourse')">
+                        {{ __('My Course') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('mytask')" :active="request()->routeIs('mytask')">
+                        {{ __('My Task') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('calendar')" :active="request()->routeIs('calendar')">
+                        {{ __('Calendar') }}
+                    </x-nav-link>
+
                     @endif
                 </div>
             </div>
