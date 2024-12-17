@@ -4,7 +4,6 @@
             {{ __('My Task') }}
         </h2>
     </x-slot>
-
     <div class="w-3/4 mx-auto py-6 ">
         <h1 class="text-xl font-bold text-gray-800 mb-6">Timeline</h1>
             <div class="mb-4 flex">

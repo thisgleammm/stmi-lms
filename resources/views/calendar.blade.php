@@ -4,8 +4,6 @@
             {{ __('Calendar') }}
         </h2>
     </x-slot>
-
-
             <div x-data="calendarApp()" class="max-w-4xl my-12 mx-auto bg-white rounded-lg shadow-lg p-4">
                 <!-- Header Kalender -->
                 <div class="flex items-center mb-4">
@@ -84,7 +82,4 @@
                     };
                 }
             </script>
-
-          
 </x-app-layout>
-                       
