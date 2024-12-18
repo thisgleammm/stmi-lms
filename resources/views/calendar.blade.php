@@ -4,141 +4,82 @@
             {{ __('Calendar') }}
         </h2>
     </x-slot>
-
-    <div class="max-w-4xl mx-auto py-10 ml-48">
-        <h1 class="text-xl font-bold text-gray-800 mb-3 ml-6">Timeline</h1>
-        <div class="bg-white shadow-md rounded-lg p-6 mx-8">
-            <div class="mb-4 flex items-center space-x-4">
-                <div>
-                    <label for="filter" class="block text-gray-600 font-medium ml-6">Filter</label>  
-                    <select id="filter" class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-8/12 sm:text-xs ml-12 mx-2">
-                        <option value="month">January</option>
-                        <option value="month">February</option>
-                        <option value="month">March</option>
-                        <option value="month">April</option>
-                        <option value="month">May</option>
-                        <option value="month">June</option>
-                        <option value="month">July</option>
-                        <option value="month">August</option>
-                        <option value="month">September</option>
-                        <option value="month">October</option>
-                        <option value="month">November</option>
-                        <option value="month">December</option> 
+            <div x-data="calendarApp()" class="max-w-4xl my-12 mx-auto bg-white rounded-lg shadow-lg p-4">
+                <!-- Header Kalender -->
+                <div class="flex items-center mb-4">
+                    <h2 class="text-xl font-semibold">Timeline</h2>
+                    <!-- Filter Bulan -->
+                    <select class="mx-2" x-model="currentMonth" @change="generateDays()" class="border rounded p-2">
+                        <template x-for="(month, index) in months" :key="index">
+                            <option :value="index" x-text="month"></option>
+                        </template>
                     </select>
                 </div>
-                <div class="flex-grow">
-                    <label for="search" class="sr-only">Search</label>
-                    <input type="text" id="search" placeholder="All Schedule..." class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-2/12 sm:text-xs ml-24">
+
+                <!-- Grid Kalender -->
+                <div>
+                    <!-- Header Hari -->
+                    <div class="grid grid-cols-7 text-center font-semibold bg-blue-500 text-white">
+                        <div>SUN</div>
+                        <div>MON</div>
+                        <div>TUE</div>
+                        <div>WED</div>
+                        <div>THU</div>
+                        <div>FRI</div>
+                        <div>SAT</div>
+                    </div>
+
+                    <!-- Tanggal -->
+                    <div class="grid grid-cols-7 border">
+                        <template x-for="(day, index) in days" :key="index">
+                            <div
+                                class="h-16 flex items-center justify-center border relative cursor-pointer"
+                                @click="toggleCircle(day)"
+                            >
+                                <span x-text="day"></span>
+                                <!-- Lingkaran untuk tanggal yang dipilih -->
+                                <div
+                                    x-show="markedDays.includes(day)"
+                                    class="absolute w-10 h-10 rounded-full border-4 border-blue-500"
+                                ></div>
+                            </div>
+                        </template>
+                    </div>
                 </div>
             </div>
 
-            <div class="overflow-x-auto">
-                <table class="table-auto border-collapse border border-blue-500 w-full text-center">
-                    <thead>
-                        <tr class="bg-blue-500 text-white">
-                            <th class="border border-blue-500 px-4 py-2">SUN</th>
-                            <th class="border border-blue-500 px-4 py-2">MON</th>
-                            <th class="border border-blue-500 px-4 py-2">TUE</th>
-                            <th class="border border-blue-500 px-4 py-2">WED</th>
-                            <th class="border border-blue-500 px-4 py-2">THU</th>
-                            <th class="border border-blue-500 px-4 py-2">FRI</th>
-                            <th class="border border-blue-500 px-4 py-2">SAT</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-blue-500 px-4 py-6">1</td>
-                            <td class="border border-blue-500 px-4 py-6">2</td>
-                            <td class="border border-blue-500 px-4 py-6">3</td>
-                            <td class="border border-blue-500 px-4 py-6">4</td>
-                            <td class="border border-blue-500 px-4 py-6">5</td>
-                            <td class="border border-blue-500 px-4 py-6">6</td>
-                            <td class="border border-blue-500 px-4 py-6">7</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-blue-500 px-4 py-6">8</td>
-                            <td class="border border-blue-500 px-4 py-6">9</td>
-                            <td class="border border-blue-500 px-4 py-6">10</td>
-                            <td class="border border-blue-500 px-4 py-6">11</td>
-                            <td class="border border-blue-500 px-4 py-6">12</td>
-                            <td class="border border-blue-500 px-4 py-6">13</td>
-                            <td class="border border-blue-500 px-4 py-6">14</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-blue-500 px-4 py-6">15</td>
-                            <td class="border border-blue-500 px-4 py-6">16</td>
-                            <td class="border border-blue-500 px-4 py-6">17</td>
-                            <td class="border border-blue-500 px-4 py-6">18</td>
-                            <td class="border border-blue-500 px-4 py-6">19</td>
-                            <td class="border border-blue-500 px-4 py-6">20</td>
-                            <td class="border border-blue-500 px-4 py-6">21</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-blue-500 px-4 py-6">22</td>
-                            <td class="border border-blue-500 px-4 py-6">23</td>
-                            <td class="border border-blue-500 px-4 py-6">24</td>
-                            <td class="border border-blue-500 px-4 py-6">25</td>
-                            <td class="border border-blue-500 px-4 py-6">26</td>
-                            <td class="border border-blue-500 px-4 py-6">27</td>
-                            <td class="border border-blue-500 px-4 py-6">28</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+            <script>
+                function calendarApp() {
+                    return {
+                        // Data bulan
+                        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                        currentMonth: new Date().getMonth(), // Bulan saat ini
+                        days: [], // Hari dalam bulan
+                        markedDays: [], // Tanggal yang ditandai
+
+                        // Generate hari berdasarkan bulan
+                        generateDays() {
+                            this.days = [];
+                            const daysInMonth = new Date(2024, this.currentMonth + 1, 0).getDate();
+                            for (let i = 1; i <= daysInMonth; i++) {
+                                this.days.push(i);
+                            }
+                        },
+
+                        // Toggle tanda lingkaran
+                        toggleCircle(day) {
+                            if (this.markedDays.includes(day)) {
+                                this.markedDays = this.markedDays.filter(d => d !== day);
+                            } else {
+                                this.markedDays.push(day);
+                            }
+                        },
+
+                        // Initialize
+                        init() {
+                            this.generateDays();
+                        }
+                    };
+                }
+            </script>
 </x-app-layout>
-                        <script scr="..\resources\js" >
-                            // Script untuk membuka dan menutup modal
-                            const openModalButton = document.getElementById('openModalButton');
-                            const closeModalButton = document.getElementById('closeModalButton');
-                            const modal = document.getElementById('modal');
-                            
-                            const openModalButtonedit = document.getElementById('openModalButtonedit');
-                            const closeModalButtonedit = document.getElementById('closeModalButtonedit');
-                            const modaledit = document.getElementById('modaledit');
-                            
-                            const openModalButtondelete = document.getElementById('openModalButtondelete');
-                            const closeModalButtondelete = document.getElementById('closeModalButtondelete');
-                            const modaldelete = document.getElementById('modaldelete');
-                    
-
-                            openModalButton.addEventListener('click', () => {
-                                modal.classList.remove('hidden');
-                            });
-
-                            closeModalButton.addEventListener('click', () => {
-                                modal.classList.add('hidden');
-                            });
-                            
-                            openModalButtonedit.addEventListener('click', () => {
-                                modaledit.classList.remove('hidden');
-                            });
-
-                            closeModalButtonedit.addEventListener('click', () => {
-                                modaledit.classList.add('hidden');
-                            });
-
-                            openModalButtondelete.addEventListener('click', () => {
-                                modaldelete.classList.remove('hidden');
-                            });
-                            
-                            closeModalButtondelete.addEventListener('click', () => {
-                                modaldelete.classList.add('hidden');
-                            });
-                        </script>
-                        <script>
-                            // const openModalButtonedit = document.getElementById('openModalButtonedit');
-                            // const closeModalButtonedit = document.getElementById('closeModalButtonedit');
-                            // const modaledit = document.getElementById('modaledit');
-
-                            // openModalButtonedit.addEventListener('click', () => {
-                            //     modaledit.classList.remove('hidden');
-                            // });
-
-                            // closeModalButtonedit.addEventListener('click', () => {
-                            //     modaledit.classList.add('hidden');
-                            // });
-                            
-                        </script>
-
