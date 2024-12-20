@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->id('id_course');
-            $table->unsignedBigInteger('lecture_id');
-            $table->string('code_course');
-            $table->string('name_courses');
-            $table->string('image');
+        Schema::create('biodata', function (Blueprint $table) {
+            $table->id('id_biodata');
             $table->unsignedBigInteger('user_id');
+            $table->string('address');
+            $table->string('phone_number');
+            $table->date('date_of_birth');
+            $table->string('profile_picture');
             $table->timestamps();
 
-            // Define foreign keys
-            // $table->foreign('lecture_id')->references('id')->on('lectures')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('biodata');
     }
 };

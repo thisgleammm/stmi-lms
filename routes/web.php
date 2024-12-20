@@ -23,7 +23,6 @@ Route::get('/calendar', function () {
     return view('calendar');
 })->middleware(['auth', 'verified'])->name('calendar');
 
-
 Route::get('/mytask', function () {
     return view('mytask');
 })->middleware(['auth', 'verified'])->name('mytask');
