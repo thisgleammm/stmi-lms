@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-center mx-24 my-4 mb-24 px-10 gap-5">
+<div class="bg-white rounded shadow flex flex-wrap justify-center mx-24 my-4 mb-24 px-10 gap-5">
     @foreach ($courses as $item)
         <div class="bg-white col-4 col-md-8 rounded shadow p-4 mx-4 w-1/4 flex flex-col items-center">
             <img src="{{ url('/images/' . $item['image']) }}" alt="{{ $item['name_courses'] }}"

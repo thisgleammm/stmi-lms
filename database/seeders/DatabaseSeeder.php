@@ -20,13 +20,13 @@ class DatabaseSeeder extends Seeder
 
         // User::factory()->create([
         //     'name' => 'isaw',
-        //     'email' => 'isaw@rizu.com',
+        //     'email' => 'isaw@adm.com',
         //     'password' => '12345678',
-        //     'token' => 'aasasdasasasdasdasds',
+        //     'token' => 'aasasdasasajjbfsds',
         //     'email_verified_at' => now()
         // ]);
 
         Enrollment::factory()->create();
-        // Student::factory(1)->create();
+        //Student::factory(1)->create();
     }
 }

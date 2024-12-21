@@ -22,7 +22,7 @@ class StudentFactory extends Factory
         $faker = \Faker\Factory::create('id_ID');
 
         return [
-            'user_id' => 2,
+            'user_id' => 1,
             'address' => $faker->address(),
             'phone_number' => $faker->phoneNumber(),
             'date_of_birth' => $faker->date('Y-m-d'),

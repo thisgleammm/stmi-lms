@@ -21,8 +21,8 @@ class EnrollmentFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => 4,
-            'course_id' => 4
+            'student_id' => 1,
+            'course_id' => 3
         ];
     }
 }
