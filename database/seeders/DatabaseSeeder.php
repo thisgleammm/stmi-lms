@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Enrollment;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Student;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,14 +16,17 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'rizu',
-            'email' => 'rizu@rizu.com',
-            'password' => '12345678',
-            'token' => 'aslhjdkahdkahdkjashdha',
-            'email_verified_at' => now()
-        ]);
+
+        // User::factory()->create([
+        //     'name' => 'isaw',
+        //     'email' => 'isaw@adm.com',
+        //     'password' => '12345678',
+        //     'token' => 'aasasdasasajjbfsds',
+        //     'email_verified_at' => now()
+        // ]);
+
+        Enrollment::factory()->create();
+        //Student::factory(1)->create();
     }
 }
