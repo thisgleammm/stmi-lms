@@ -85,10 +85,13 @@
                             <div class="border-l-2 border-t-0 border-b-0 border-r-0 border-slate-400 ">
                                 <div class="px-4">{{ Auth::user()->name }}</div>
                                 <div class="px-4 capitalize">{{ Auth::user()->level }}</div>
-                            </div>
-                            <div class="image size-10">
-                                <img src="{{ url('/images/profile.svg') }}" alt="Logo" class="max-w-full h-auto">
-                            </div>
+                        </div>           
+                        <div class="image size-10">
+                            <img 
+                            src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : url('/images/profile.svg') }}" 
+                            alt="Profile Picture" 
+                            class="max-w-full h-auto rounded-full">
+                        </div>
                         </button>
                     </x-slot>
 
