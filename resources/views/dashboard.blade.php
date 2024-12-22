@@ -6,7 +6,7 @@
     </x-slot>
     @if (Auth::user()->level === 'admin')
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-4 sm:mx-6 lg:mx-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         {{ __('Monthly Statistics') }}
@@ -76,8 +76,8 @@
         </div>
     @else
         <div class="mb-8 mt-4">
-            <h2 class="text-xl font-semibold ml-44 mb-2">Latest Announcements</h2>
-            <div class="bg-white p-4 rounded shadow mx-40">
+            <h2 class="text-xl font-semibold ml-4 sm:ml-16 mb-2 lg:mx-40">Latest Announcements</h2>
+            <div class="bg-white p-4 rounded shadow mx-4 sm:mx-6 lg:mx-40">
                 <p class="text-base text-gray-500">27 Nov, 12:07</p>
                 <p class="text-lg text-slate-950">{{ Auth::user()->name }}</p>
                 <a href="#" class="text-blue-600 font-semibold text-base">Maintenance LMS 27th November 2024</a>
@@ -86,33 +86,68 @@
 
         <!-- Timeline Section -->
         <div class="mb-8">
-            <div class="flex items-center justify-between ml-44 mb-4">
+            <div class="flex items-center justify-between ml-4 sm:ml-16 mb-4 lg:mx-40">
                 <h2 class="text-xl font-semibold">Timeline</h2>
-                <a href="<?= url('mytask') ?>" class="text-blue-600 mr-44">See All My Task</a>
+                <a href="<?= url('mytask') ?>" class="text-blue-600 lg:mr-4 mr-4 sm:mr-20">See all my task</a>
             </div>
-            <div class="bg-white p-4 rounded mx-40 shadow">
-                <div class="flex items-center justify-between mb-4">
+            <div class="bg-white p-4 rounded mx-4 sm:mx-6 lg:mx-40 shadow">
+                <div class="flex items-center space-x-2 w-full sm:w-auto">
                     <select
-                        class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm">
+                        class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm w-full sm:w-auto">
                         <option>Sort by dates</option>
                         <option>Upcoming</option>
                         <option>Complete</option>
                     </select>
-                    <input type="text" class="border-gray-300 rounded px-2 py-1" placeholder="Search...">
+                    {{-- <input type="text" class="border-gray-300 rounded-md shadow-sm px-2 py-1 sm:text-sm w-full sm:w-auto" placeholder="Search..."> --}}
+                    <input type="text" class="border-gray-300 rounded-md shadow-sm sm:text-sm w-full sm:w-auto" placeholder="Search...">
                 </div>
-                <div class="border-t pt-4">
+                <div class="pt-4">
                     <p class="text-sm text-gray-500">Saturday, 30 November 2024</p>
                     <div class="flex items-center justify-between">
                         <div>
                             <h3 class="text-lg font-semibold">QUIZ REVIEW - Penugasan (Riset Operasi)</h3>
                             <p class="text-sm text-gray-500">Metode Penugasan kasus Minimasi & Maksimasi</p>
                         </div>
-                        <a class="bg-blue-600 text-white px-4 py-2 rounded" href="<?= url('attempt') ?>">Attempt Quiz
-                            Now</a>
+                        <a class="bg-blue-600 text-white px-4 py-2 rounded" href="<?= url('attempt') ?>">Attempt Quiz Now</a>
                     </div>
                 </div>
             </div>
-            <x-course-view1 :courses="$courses" />
+        </div>
+
+        <!-- Course Section -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between ml-4 sm:ml-16 mb-4 lg:mx-40">
+                <h2 class="text-xl font-semibold">Course Overview</h2>
+                <a href="<?= url('mytask') ?>" class="text-blue-600 lg:mr-4 mr-4 sm:mr-16">See all my course</a>
+            </div>
+            <div class="px-4 mx-4 sm:mx-6 lg:mx-40">
+                <div class="flex items-center justify-between mb-4">
+                    <!-- Filter & Search Section -->
+                    <div class="flex items-center space-x-4 w-full sm:w-auto">
+                        <!-- Filter Section -->
+                        <div class="flex items-center space-x-2 w-full sm:w-auto">
+                            <span class="text-gray-700 text-sm font-medium">Filter</span>
+                            <select
+                                class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-md w-full">
+                                <option>Sort by dates</option>
+                                <option>Upcoming</option>
+                                <option>Complete</option>
+                            </select>
+                        </div>
+
+                        <!-- Search Section -->
+                        <div class="flex items-center space-x-2 w-full sm:w-auto">
+                            <div class="relative w-full sm:w-auto">
+                                <input type="text" class="border-gray-300 rounded-md shadow-sm sm:text-sm w-full" placeholder="Search...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- See All My Course -->
+                    
+                </div>
+            </div>
+            <x-course-view :courses="$courses" />
         </div>
     @endif
 </x-app-layout>

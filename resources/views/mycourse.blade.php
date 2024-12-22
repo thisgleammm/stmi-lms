@@ -7,8 +7,6 @@
 
     <div class="mb-8">
         <h2 class="text-xl mx-44 font-semibold mb-12 mt-4">Course Overview</h2>
-        <x-course-view1 :courses="$courses" />
-        {{-- <x-course-view2>
-        </x-course-view2> --}}
+        <x-course-view :courses="$courses" />
     </div>
 </x-app-layout>

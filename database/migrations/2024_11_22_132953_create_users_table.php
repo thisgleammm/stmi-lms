@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password')->nullable(false);;
             $table->string('level')->nullable(false)->default('mahasiswa');
             $table->string('profile_picture')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string("token")->nullable()->unique("users_token_unique");
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
