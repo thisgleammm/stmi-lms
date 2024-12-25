@@ -20,6 +20,16 @@
                     $firstName = $nameParts[0];
                     $lastName = '';
                 }
+
+                $levelTranslations = [
+                    'mahasiswa' => 'Student',
+                    'dosen' => 'Lecturer',
+                    'admin' => 'Administrator',
+                    // Tambahkan level lain sesuai kebutuhan
+                ];
+
+                $userLevel = Auth::user()->level;
+                $levelDisplay = $levelTranslations[$userLevel] ?? ucwords($userLevel);
             @endphp
 
             <x-profile-header avatarUrl="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('/images/profile.svg') }}"  name="{{ $user->name }}" role="{{ $user->role }}" lastUpdated="{{ Auth::user()->updated_at->format('d F Y, H:i:s') }}" />
@@ -31,7 +41,7 @@
                     <div class="flex flex-col w-[50%] gap-6">
                         <x-profile-field label="First Name" :value="$firstName" />
                         <x-profile-field label="Email Address" :value="Auth::user()->email" />
-                        <x-profile-field label="Profession" :value="ucwords(Auth::user()->level)" />
+                        <x-profile-field label="Profession" :value="$levelDisplay" />
                     </div>
 
                     <div class="flex flex-col w-[50%] gap-6">

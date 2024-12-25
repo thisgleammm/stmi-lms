@@ -82,9 +82,26 @@
                         <button
                             class="flex text-right items-center px-3 py-2 border border-transparent border-l-2 text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
 
-                            <div class="border-l-2 border-t-0 border-b-0 border-r-0 border-slate-400 ">
-                                <div class="px-4">{{ Auth::user()->name }}</div>
-                                <div class="px-4 capitalize">{{ Auth::user()->level }}</div>
+                        <div class="border-l-2 border-t-0 border-b-0 border-r-0 border-slate-400 ">
+                            <div class="px-4">{{ Auth::user()->name }}</div>
+                            <div class="px-4 capitalize">
+                                @switch(Auth::user()->level)
+                                    @case('mahasiswa')
+                                        Student
+                                        @break
+
+                                    @case('dosen')
+                                        Lecturer
+                                        @break
+
+                                    @case('admin')
+                                        Administrator
+                                        @break
+
+                                    @default
+                                        {{ Auth::user()->level }}
+                                @endswitch
+                            </div>
                         </div>           
                         <div class="image size-10">
                             <img 

@@ -4,65 +4,54 @@
             {{ __('My Task') }}
         </h2>
     </x-slot>
-    <div class="w-3/4 mx-auto py-6 ">
-        <h1 class="text-xl font-bold text-gray-800 mb-6">Timeline</h1>
-        <div class="mb-4 flex">
-            <label for="filter" class="block text-gray-600 ml-8 font-medium mt-3 ">Filter</label>
-            <select id="filter"
-                class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-2/12 sm:text-sm ml-4 mt-2">
-                <option value="dates">Sort by dates</option>
-                <option value="dates">Upcoming</option>
-                <option value="dates">complate</option>
-            </select>
-        </div>
-        <div>
-            <div class="bg-white p-2 rounded shadow  w-full">
-                <h2 class="text-base font-semibold text-gray-700 mb-4 mt-4 ml-9">Saturday, 30 November 2024</h2>
-                <div class="space-y-4 my-5">
-                    <!-- Task Card -->
-                    <div class="bg-gray-100 rounded-lg p-4 mx-4 flex justify-between items-center">
-                        <div class="flex items-center">
-                            <div class="bg-blue-500 text-white p-3 rounded-full mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9 12l2 2 4-4M6.75 12a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-800">QUIZ REVIEW - Penugasan (Riset Operasi)
-                                </h3>
-                                <p class="text-gray-600 text-sm">Metode Penugasan kasus Minimasi & Maksimasi</p>
-                                <p class="text-gray-500 text-xs mt-1">23:59</p>
-                            </div>
-                        </div>
-                        <x-attempt-session></x-attempt-session>
-                    </div>
-                    <!-- End Task Card -->
 
-                    <!-- Task Card -->
-                    <div class="bg-gray-100 rounded-lg p-4 mx-4 flex justify-between items-center">
-                        <div class="flex items-center">
-                            <div class="bg-blue-500 text-white p-3 rounded-full mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9 12l2 2 4-4M6.75 12a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-800">QUIZ REVIEW - Linux (Sistem Operasi)
-                                </h3>
-                                <p class="text-gray-600 text-sm">Mengirimkan bukti Screenshot bahwa Linux Terinstall</p>
-                                <p class="text-gray-500 text-xs mt-1">23:59</p>
-                            </div>
-                        </div>
-                        <x-attempt-session></x-attempt-session>
-                    </div>
-                    <!-- End Task Card -->
+    <!-- Timeline Header -->
+    <div class="mb-8 mt-4">
+        <h2 class="text-xl font-semibold ml-4 sm:ml-16 mb-2 lg:mx-40">Timeline</h2>
+        <div class="px-4 mx-4 sm:mx-6 lg:mx-36">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <!-- Filter Section -->
+                <div class="flex items-center space-x-2 w-full sm:w-auto">
+                    <span class="text-gray-700 text-sm font-medium">Filter</span>
+                    <select
+                        class="border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-md w-full sm:w-auto">
+                        <option>Sort by dates</option>
+                        <option>Upcoming</option>
+                        <option>Complete</option>
+                    </select>
                 </div>
+                <!-- Additional Filters or Controls (Optional) -->
+                <!-- Anda dapat menambahkan elemen lain di sini jika diperlukan -->
             </div>
         </div>
     </div>
 
+    <!-- Timeline Item -->
+    <div class="mb-8">
+        <h2 class="text-xl font-semibold ml-4 sm:ml-16 mb-2 lg:mx-40">Saturday, 30 November 2024</h2>
+        <div class="bg-white p-6 rounded mx-4 sm:mx-6 lg:mx-40 shadow">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <!-- Icon Container -->
+                <div class="bg-blue-500 text-white rounded w-16 h-16 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-8 h-8">
+                        <path fill="currentColor" d="M280 64l40 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 128C0 92.7 28.7 64 64 64l40 0 9.6 0C121 27.5 153.3 0 192 0s71 27.5 78.4 64l9.6 0zM64 112c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16l-16 0 0 24c0 13.3-10.7 24-24 24l-88 0-88 0c-13.3 0-24-10.7-24-24l0-24-16 0zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
+                    </svg>
+                </div>
+
+                <!-- Text Container -->
+                <div class="flex-1 mt-4 sm:mt-0 sm:ml-4">
+                    <h3 class="text-xl font-semibold">QUIZ REVIEW - Penugasan (Riset Operasi)</h3>
+                    <p class="text-md text-gray-500">
+                        Metode Penugasan kasus Minimasi & Maksimasi - 
+                        <span class="font-semibold text-red-600">Deadline 23:59</span>
+                    </p>
+                </div>
+
+                <!-- Attempt Session Component -->
+                <div class="mt-4 sm:mt-0">
+                    <x-attempt-session />
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

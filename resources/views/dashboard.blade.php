@@ -108,19 +108,27 @@
                             <h3 class="text-lg font-semibold">QUIZ REVIEW - Penugasan (Riset Operasi)</h3>
                             <p class="text-sm text-gray-500">Metode Penugasan kasus Minimasi & Maksimasi</p>
                         </div>
-                        <a class="bg-blue-600 text-white px-4 py-2 rounded" href="<?= url('attempt') ?>">Attempt Quiz Now</a>
+                        <x-attempt-session />
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Course Section -->
-        <div class="mb-8">
+        <div class="mb-8" x-data="{
+            search: '',
+            filteredCourses() {
+                return @entangle('courses').filter(course => {
+                    return course.title.toLowerCase().includes(this.search.toLowerCase()) ||
+                           course.description.toLowerCase().includes(this.search.toLowerCase());
+                });
+            }
+        }">
             <div class="flex items-center justify-between ml-4 sm:ml-16 mb-4 lg:mx-40">
                 <h2 class="text-xl font-semibold">Course Overview</h2>
                 <a href="<?= url('mytask') ?>" class="text-blue-600 lg:mr-4 mr-4 sm:mr-16">See all my course</a>
             </div>
-            <div class="px-4 mx-4 sm:mx-6 lg:mx-40">
+            <div class="px-4 mx-4 sm:mx-6 lg:mx-36">
                 <div class="flex items-center justify-between mb-4">
                     <!-- Filter & Search Section -->
                     <div class="flex items-center space-x-4 w-full sm:w-auto">
@@ -138,16 +146,24 @@
                         <!-- Search Section -->
                         <div class="flex items-center space-x-2 w-full sm:w-auto">
                             <div class="relative w-full sm:w-auto">
-                                <input type="text" class="border-gray-300 rounded-md shadow-sm sm:text-sm w-full" placeholder="Search...">
+                                <input x-model="search" type="text" class="border-gray-300 rounded-md shadow-sm sm:text-sm w-full" placeholder="Search...">
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- See All My Course -->
-                    
+                <!-- Display filtered courses -->
+                <div class="course-list">
+                    <template x-for="course in filteredCourses()" :key="course.id">
+                        <div class="course-item">
+                            <h3 x-text="course.title"></h3>
+                            <p x-text="course.description"></p>
+                        </div>
+                    </template>
                 </div>
             </div>
-            <x-course-view :courses="$courses" />
         </div>
+
+        <x-course-view :courses="$courses"/> 
     @endif
 </x-app-layout>

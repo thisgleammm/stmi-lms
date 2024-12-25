@@ -1,1 +1,1 @@
-<a class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium" href="<?= url('attempt'); ?>">Attempt Quiz Now</a> 
+<a class="border-solid border-2 border-blue-600 text-blue-600 px-4 py-2 rounded text-center" href="<?= url('attempt') ?>">Attempt Quiz Now</a>
