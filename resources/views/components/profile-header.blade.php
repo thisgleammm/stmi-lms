@@ -1,6 +1,6 @@
 @props(['name', 'role', 'lastUpdated', 'avatarUrl' => null])
 
-<div class="flex flex-col items-center gap-4 py-8">
+<div class="flex flex-col items-center space-x-4">
     <div class="h-24 w-24 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
         @if ($avatarUrl)
             <img src="{{ $avatarUrl }}" alt="{{ $name }}" class="h-full w-full object-cover">

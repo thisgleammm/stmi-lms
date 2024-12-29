@@ -65,6 +65,45 @@
             </div>
         </div>
 
+        {{-- <div class="w-full lg:w-1/3 bg-gray-50 rounded shadow-lg p-4">
+                <!-- Container untuk gambar yang bisa digeser -->
+                <div class="relative">
+                    <div class="flex overflow-x-scroll space-x-4" id="news-container">
+                        <!-- Berita 1 -->
+                        <a href="https://stmi.ac.id/kegiatan-sosialisasi-dari-dr-okubo-tokyo-city-university/"
+                            class="block">
+                            <img src="https://stmi.ac.id/wp-content/uploads/2024/11/8-2-768x960.jpg"
+                                alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
+                        </a>
+                        <!-- Berita 2 -->
+                        <a href="https://stmi.ac.id/kegiatan-sosialisasi-dari-dr-okubo-tokyo-city-university/"
+                            class="block">
+                            <img src="https://stmi.ac.id/wp-content/uploads/2024/11/1-4-768x960.jpg"
+                                alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
+                        </a>
+                        <!-- Berita 3 -->
+                        <a href="https://stmi.ac.id/kegiatan-sosialisasi-dari-dr-okubo-tokyo-city-university/"
+                            class="block">
+                            <img src="https://stmi.ac.id/wp-content/uploads/2024/11/5-3-768x961.jpg"
+                                alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
+                        </a>
+                        <!-- Berita 4 -->
+                        <a href="https://stmi.ac.id/kegiatan-sosialisasi-dari-dr-okubo-tokyo-city-university/"
+                            class="block">
+                            <img src="https://stmi.ac.id/wp-content/uploads/2024/11/7-1-768x961.jpg"
+                                alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
+                        </a>
+                        <!-- Berita 5 -->
+                        <a href="https://stmi.ac.id/kegiatan-sosialisasi-dari-dr-okubo-tokyo-city-university/"
+                            class="block">
+                            <img src="https://stmi.ac.id/wp-content/uploads/2024/11/5-1-768x961.jpg"
+                                alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
         <!-- Course Section -->
         <div class="mb-8" x-data="{
             search: '',
@@ -133,17 +172,17 @@
         </div>
 
         <!-- Back to Top Button -->
-        <button id="back-to-top"
-            class="hidden fixed bottom-8 right-8 bg-white text-blue px-4 py-2 rounded-full shadow-lg">
-            ^
+        <button id="back-to-top" class="hidden fixed bottom-60 right-8">
+            <img src="/images/logolingkaran.svg" alt="Back to Top" class="h-40 w-40">
         </button>
+
 
         <script>
             // Back to Top Button Functionality
             const backToTopButton = document.getElementById('back-to-top');
 
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
+                if (window.scrollY > 800) {
                     backToTopButton.classList.remove('hidden');
                 } else {
                     backToTopButton.classList.add('hidden');
@@ -159,12 +198,23 @@
         </script>
 
         <script>
-            // Fungsi untuk geser otomatis setiap 30 detik
+            // Fungsi untuk geser otomatis setiap 3 detik
             setInterval(function() {
                 const container = document.getElementById('news-container');
-                container.scrollBy({
-                    left: 200, // Geser 200px ke kanan
-                    behavior: 'smooth'
-                });
-            }, 30000); // 30 detik
+
+                // Periksa apakah sudah di akhir
+                if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+                    // Jika di akhir, kembali ke awal
+                    container.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Jika belum di akhir, geser ke kanan
+                    container.scrollBy({
+                        left: 325, // Geser 330px ke kanan
+                        behavior: 'smooth'
+                    });
+                }
+            }, 3000); // Setiap 3 detik
         </script>

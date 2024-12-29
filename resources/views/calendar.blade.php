@@ -104,16 +104,17 @@
     </script>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-white text-blue px-4 py-2 rounded-full shadow-lg">
-        ^
+    <button id="back-to-top" class="hidden fixed bottom-60 right-8">
+        <img src="/images/logolingkaran.svg" alt="Back to Top" class="h-40 w-40">
     </button>
+
 
     <script>
         // Back to Top Button Functionality
         const backToTopButton = document.getElementById('back-to-top');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 200) {
                 backToTopButton.classList.remove('hidden');
             } else {
                 backToTopButton.classList.add('hidden');

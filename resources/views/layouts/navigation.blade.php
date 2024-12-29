@@ -75,40 +75,40 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <div class="image size-6 ml-1 mt-2">
-                    <img src="{{ url('/images/notificon.svg') }}" alt="Logo" class="max-w-full h-auto">
+                    <a href="#">
+                        <img src="{{ url('/images/notificon.svg') }}" alt="Logo" class="max-w-full h-auto">
+                    </a>
                 </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
                             class="flex text-right items-center px-3 py-2 border border-transparent border-l-2 text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
 
-                        <div class="border-l-2 border-t-0 border-b-0 border-r-0 border-slate-400 ">
-                            <div class="px-4">{{ Auth::user()->name }}</div>
-                            <div class="px-4 capitalize">
-                                @switch(Auth::user()->level)
-                                    @case('mahasiswa')
-                                        Student
+                            <div class="border-l-2 border-t-0 border-b-0 border-r-0 border-slate-400 ">
+                                <div class="px-4">{{ Auth::user()->name }}</div>
+                                <div class="px-4 capitalize">
+                                    @switch(Auth::user()->level)
+                                        @case('mahasiswa')
+                                            Student
                                         @break
 
-                                    @case('dosen')
-                                        Lecturer
+                                        @case('dosen')
+                                            Lecturer
                                         @break
 
-                                    @case('admin')
-                                        Administrator
+                                        @case('admin')
+                                            Administrator
                                         @break
 
-                                    @default
-                                        {{ Auth::user()->level }}
-                                @endswitch
+                                        @default
+                                            {{ Auth::user()->level }}
+                                    @endswitch
+                                </div>
                             </div>
-                        </div>           
-                        <div class="image size-10">
-                            <img 
-                            src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : url('/images/profile.svg') }}" 
-                            alt="Profile Picture" 
-                            class="max-w-full h-auto rounded-full">
-                        </div>
+                            <div class="image size-10">
+                                <img src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : url('/images/profile.svg') }}"
+                                    alt="Profile Picture" class="max-w-full h-auto rounded-full">
+                            </div>
                         </button>
                     </x-slot>
 

@@ -30,11 +30,7 @@
 
                     <!-- Eye Icon for Show/Hide Password -->
                     <span id="togglePassword" class="absolute inset-y-0 right-0 flex items-center px-3 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            class="h-5 w-5 text-gray-500">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4zM2.51 12.79c.48-.92 1.34-1.79 2.43-2.45-.05-.11-.1-.22-.15-.34-.79-1.47-.46-3.31.91-4.61 1.28-1.17 3.19-1.42 4.77-.61 1.68.9 2.34 2.74 1.59 4.35-.25.6-.76 1.09-1.34 1.4-.79-.4-1.7-.29-2.48.2-.91.63-1.34 1.76-1.17 2.87-.55-.13-1.1-.23-1.65-.33.17-.73-.07-1.46-.58-2.06z" />
-                        </svg>
+                        <img id="eyeIcon" src="{{ url('/images/unhide.svg') }}" alt="Show Password" class="h-5 w-5">
                     </span>
                 </div>
 
@@ -54,7 +50,6 @@
 
         <div class="mb-3">
             {!! NoCaptcha::display() !!}
-
             @if ($errors->has('g-recaptcha-response'))
                 <x-input-error :messages="$errors->first('g-recaptcha-response')" class="mt-2" />
             @endif
@@ -71,16 +66,23 @@
         </div>
     </form>
 
+    <!-- Script untuk Toggle Password Visibility -->
     <script>
         // Toggle password visibility
         document.getElementById('togglePassword').addEventListener('click', function() {
             const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
             const type = passwordField.type === 'password' ? 'text' : 'password';
             passwordField.type = type;
 
-            // Change the eye icon based on visibility
-            this.querySelector('svg').classList.toggle('text-gray-500');
-            this.querySelector('svg').classList.toggle('text-blue-500');
+            // Toggle the icon between 'unhide' and 'hide'
+            if (passwordField.type === 'password') {
+                eyeIcon.src = '{{ url('/images/unhide.svg') }}'; // Ganti ikon menjadi 'unhide'
+                eyeIcon.alt = 'Show Password';
+            } else {
+                eyeIcon.src = '{{ url('/images/hide.svg') }}'; // Ganti ikon menjadi 'hide'
+                eyeIcon.alt = 'Hide Password';
+            }
         });
     </script>
 </x-guest-layout>
