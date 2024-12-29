@@ -10,7 +10,6 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-
 Route::get('/lecturedata', function () {
     return view('lecturedata');
 })->middleware(['auth', 'verified'])->name('lecturedata');

@@ -4,7 +4,6 @@
             {{ __('Course') }}
         </h2>
     </x-slot>
-    {{-- {{ var_dump($type) }} --}}
 
     <body class="bg-gray-100 font-sans mb-16">
         <div class="flex flex-col md:flex-row max-w-6xl mx-auto mt-10  shadow-lg rounded-lg">
