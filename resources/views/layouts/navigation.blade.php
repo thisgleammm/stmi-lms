@@ -114,6 +114,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
+                            <img src="{{ asset('images/profileicon.svg') }}" alt="Profile Icon" class="inline-block w-5 h-5 mr-2">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
@@ -123,6 +124,7 @@
 
                             <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault(); this.closest('form').submit();">
+                                <img src="{{ asset('images/logout.svg') }}" alt="Profile Icon" class="inline-block w-5 h-5 mr-2">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
