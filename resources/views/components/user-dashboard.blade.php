@@ -46,20 +46,14 @@
                 <div class="relative">
                     <div class="flex overflow-x-scroll space-x-4" id="news-container">
                         <!-- Berita 1 -->
-                        <img src="https://stmi.ac.id/wp-content/uploads/2024/11/8-2-768x960.jpg" alt="Berita Terkini"
-                            class="rounded-lg object-cover w-full mb-4">
+                        <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/4/22/b8060e71-6297-4cc3-ab7d-47f8055a0b19.jpg"
+                            alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
                         <!-- Berita 2 -->
-                        <img src="https://stmi.ac.id/wp-content/uploads/2024/11/1-4-768x960.jpg" alt="Berita Terkini"
-                            class="rounded-lg object-cover w-full mb-4">
+                        <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/4/22/b8060e71-6297-4cc3-ab7d-47f8055a0b19.jpg"
+                            alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
                         <!-- Berita 3 -->
-                        <img src="https://stmi.ac.id/wp-content/uploads/2024/11/5-3-768x961.jpg" alt="Berita Terkini"
-                            class="rounded-lg object-cover w-full mb-4">
-                        <!-- Berita 4 -->
-                        <img src="https://stmi.ac.id/wp-content/uploads/2024/11/7-1-768x961.jpg" alt="Berita Terkini"
-                            class="rounded-lg object-cover w-full mb-4">
-                        <!-- Berita 5 -->
-                        <img src="https://stmi.ac.id/wp-content/uploads/2024/11/5-1-768x961.jpg" alt="Berita Terkini"
-                            class="rounded-lg object-cover w-full mb-4">
+                        <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/4/22/b8060e71-6297-4cc3-ab7d-47f8055a0b19.jpg"
+                            alt="Berita Terkini" class="rounded-lg object-cover w-full mb-4">
                     </div>
                 </div>
             </div>
