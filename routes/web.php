@@ -5,11 +5,11 @@ use App\Http\Controllers\coursesController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\materialController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\taskController;
 
 Route::get('/', function () {
     return view('auth/login');
 });
-
 
 Route::get('/lecturedata', function () {
     return view('lecturedata');
@@ -30,6 +30,7 @@ Route::get('/mytask', function () {
 Route::get('/attempt', function () {
     return view('attempt');
 })->middleware(['auth', 'verified'])->name('attempt');
+
 
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 

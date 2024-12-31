@@ -16,12 +16,41 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        // return view('profile');
-        $user = Auth::user();
-        return view('Profile', compact('user'));
-        // return view('edit', [
-        //     'user' => $request->user(),
-        // ]);
+        // Split the name into parts (first name and last name)
+        $nameParts = explode(' ', Auth::user()->name);
+
+        // If there are more than 1 part, treat the first part as first name and the rest as last name
+        if (count($nameParts) > 1) {
+            $firstName = implode(' ', array_slice($nameParts, 0, -1));  // all parts except the last one
+            $lastName = $nameParts[count($nameParts) - 1];  // the last part
+        } else {
+            // If only one part exists, treat it as the first name, and leave the last name empty
+            $firstName = $nameParts[0];
+            $lastName = '';
+        }
+
+        $levelTranslations = [
+            'mahasiswa' => 'Student',
+            'dosen' => 'Lecturer',
+            'admin' => 'Administrator',
+            // Tambahkan level lain sesuai kebutuhan
+        ];
+
+        $userLevel = Auth::user()->level;
+        $levelDisplay = $levelTranslations[$userLevel] ?? ucwords($userLevel);
+
+        $data = [
+            'name' => Auth::user()->name,
+            'firstName' => $firstName,
+            'lastName' => $lastName,
+            'role' => $levelDisplay,
+            'phone_number' => 120381083,
+            'email' => Auth::user()->email,
+        ];
+
+
+        // Return 
+        return view('Profile', ["user" => $data]);
     }
 
     /**
