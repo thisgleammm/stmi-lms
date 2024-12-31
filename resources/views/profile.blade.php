@@ -4,9 +4,8 @@
             {{ __('Profile') }}
         </h2>
     </x-slot>
-    {{-- {{ dd($user) }} --}}
     <div class="max-w-4xl mx-auto p-4 md:p-8">
-        <div class="bg-white rounded-lg shadow-sm">
+        <div class="bg-white pt-4 rounded-lg shadow-sm">
             <x-profile-header
                 avatarUrl="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('/images/profile.svg') }}"
                 name="{{ $user['name'] }}" role="{{ $user['role'] }}"

@@ -40,18 +40,18 @@
         <div id="formPhone" class="space-y-4">
             <label class="block">
                 <span class="text-gray-700">Current Phone</span>
-                <input type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                    placeholder="Enter current phone">
+                <x-text-input id="currentnumber" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" type="text" name="currentphone" required
+                    autocomplete="current-number" placeholder="Enter current phone" />
             </label>
             <label class="block">
                 <span class="text-gray-700">New Phone</span>
-                <input type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                    placeholder="Enter new phone">
+                <x-text-input id="newnumber" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" type="text" name="newnumber" required
+                    autocomplete="new-number" placeholder="Enter new phone" />
             </label>
             <label class="block">
                 <span class="text-gray-700">Password</span>
-                <input type="password" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                    placeholder="Enter your password">
+                <x-text-input id="password" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" type="password" name="password" required
+                    autocomplete="current-password" minlength="8" placeholder="Enter your password" />
             </label>
         </div>
 
@@ -59,18 +59,18 @@
         <div id="formPassword" class="space-y-4 hidden">
             <label class="block">
                 <span class="text-gray-700">Current Password</span>
-                <input type="password" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                    placeholder="Enter current password">
+                <x-text-input id="password" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" type="password" name="password" required
+                    autocomplete="current-password" minlength="8" placeholder="Enter current password" />
             </label>
             <label class="block">
                 <span class="text-gray-700">New Password</span>
-                <input type="password" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                    placeholder="Enter new password">
+                    <x-text-input id="newpassword" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" type="password" name="newpassword" required
+                    autocomplete="new-password" minlength="8" placeholder="Enter new password" />
             </label>
             <label class="block">
                 <span class="text-gray-700">Confirm New Password</span>
-                <input type="password" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                    placeholder="Confirm new password">
+                <x-text-input id="newrepeatpassword" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" type="password" name="newrepeatpassword" required
+                    autocomplete="new-repeat-password" minlength="8" placeholder="Confirm new password" />
             </label>
         </div>
 
