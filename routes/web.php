@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\taskController;
+use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\coursesController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\materialController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\taskController;
 
 Route::get('/', function () {
     return view('auth/login');
