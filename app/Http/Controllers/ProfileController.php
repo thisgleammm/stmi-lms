@@ -44,7 +44,7 @@ class ProfileController extends Controller
             'firstName' => $firstName,
             'lastName' => $lastName,
             'role' => $levelDisplay,
-            'phone_number' => 120381083,
+            'phone_number' => Auth::user()->phone_number,
             'email' => Auth::user()->email,
         ];
 
