@@ -38,10 +38,11 @@ Route::get('/mycourse', [coursesController::class, 'index'])->middleware(['auth'
 
 Route::get('/coursefile/{course?}/{type?}', [coursesController::class, 'courses'])->middleware(['auth', 'verified'])->name('coursefile');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::patch('/profile/editphone', [ProfileController::class, 'updatePhone'])->name('phone.update');
+    Route::patch('/profile/editPass', [ProfileController::class, 'updatePassword'])->name('update.password');
+    Route::delete('/profile/delete', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__ . '/auth.php';
