@@ -14,7 +14,7 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                bgMainLogin: "url('/images/bgMainLogin.svg)",
+                bgMainLogin: "url('/images/bgMainLogin.webp)",
             },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
@@ -26,8 +26,5 @@ export default {
         },
     },
 
-    plugins: [
-        forms, 
-        require('flowbite/plugin')
-    ]
+    plugins: [forms, require("flowbite/plugin")],
 };

@@ -17,7 +17,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 bg-none md:bg-[url('../../public/images/bgMainLogin.svg')] md:bg-main md:bg-cover md:bg-no-repeat w-full">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 bg-none md:bg-[url('../../public/images/bgMainLogin.webp')] md:bg-main md:bg-cover md:bg-no-repeat w-full">
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg ">
                 {{ $slot }}
             </div>

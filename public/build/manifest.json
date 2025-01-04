@@ -1,10 +1,10 @@
 {
-  "public/images/bgMainLogin.svg": {
-    "file": "assets/bgMainLogin-CDp9aG7b.svg",
-    "src": "public/images/bgMainLogin.svg"
+  "public/images/bgMainLogin.webp": {
+    "file": "assets/bgMainLogin-BEcbUOUw.webp",
+    "src": "public/images/bgMainLogin.webp"
   },
   "resources/css/app.css": {
-    "file": "assets/app-ZlyLGpss.css",
+    "file": "assets/app-BTtk8WVX.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
