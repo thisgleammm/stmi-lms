@@ -68,6 +68,18 @@
                         <x-nav-link :href="route('calendar')" :active="request()->routeIs('calendar')">
                             {{ __('Calendar') }}
                         </x-nav-link>
+                    @else
+                        <x-nav-link :href="route('mycourse')" :active="request()->routeIs('mycourse')">
+                            {{ __('My Course') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('mytask')" :active="request()->routeIs('mytask')">
+                            {{ __('My Schedule') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('calendar')" :active="request()->routeIs('calendar')">
+                            {{ __('Calendar') }}
+                        </x-nav-link>
                     @endif
                 </div>
             </div>
