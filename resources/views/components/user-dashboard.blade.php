@@ -15,7 +15,11 @@
                 <div class="bg-white p-4 sm:p-6 xl:p-4 rounded shadow">
                     <div class="flex items-center justify-between mb-4 sm:mb-6 xl:mb-4">
                         <h2 class="text-xl font-semibold">Timeline</h2>
+                        @if(Auth::user()->level === 'mahasiswa')
                         <a href="<?= url('mytask') ?>" class="text-blue-600">See all my task</a>
+                        @else
+                        <a href="<?= url('mytask') ?>" class="text-blue-600">See all my schedule</a>
+                        @endif
                     </div>
                     <div class="flex items-center space-x-2 w-full sm:w-auto mb-4 sm:mb-6 xl:mb-8 xl:w-auto">
                         <select
